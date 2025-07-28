@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lion's Barbearia - Agendamento Online</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="welcome-screen" class="container">
+        <div class="welcome-text">
+            <h2>Tradição e Estilo em Cada Corte</h2>
+            <p>Sua experiência em um ambiente clássico, com serviços modernos. Sinta-se em casa.</p>
+        </div>
+        <img src="sua-foto-aqui.jpg" alt="Ambiente da Lion's Barbearia" class="welcome-image">
+        <div id="promocoes-destaque"></div>
+        <button id="btn-show-booking" title="Ir para Agendamento">&darr;</button>
+    </div>
+
+    <div id="booking-screen" class="container hidden">
+        <header>
+            <h1 class="barbearia-titulo">
+                <img src="logo.png" alt="Logo da Lion's Barbearia" class="logo-barbearia-h1">
+                Lion's Barbearia
+            </h1>
+            <p>Agende seu horário com os melhores.</p>
+        </header>
+
+        <main>
+            <form id="agendamento-form">
+                <div class="form-group">
+                    <label>1. Escolha o Serviço</label>
+                    <div class="servicos-container">
+                        <div class="servico-opcao">
+                            <input type="radio" id="corte" name="servico" value="Corte de Cabelo" required>
+                            <label for="corte">Corte de Cabelo<br><span>R$ 40,00</span></label>
+                        </div>
+                        <div class="servico-opcao">
+                            <input type="radio" id="barba" name="servico" value="Barba Tradicional">
+                            <label for="barba">Barba Tradicional<br><span>R$ 30,00</span></label>
+                        </div>
+                        <div class="servico-opcao">
+                            <input type="radio" id="combo" name="servico" value="Corte + Barba">
+                            <label for="combo">Corte + Barba<br><span>R$ 65,00</span></label>
+                        </div>
+                        <div class="servico-opcao">
+                            <input type="radio" id="pezinho" name="servico" value="Acabamento (Pezinho)">
+                            <label for="pezinho">Acabamento (Pezinho)<br><span>R$ 15,00</span></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group horarios-data">
+                    <div>
+                        <label for="data">2. Escolha a Data</label>
+                        <input type="text" id="data" name="data" placeholder="Selecione uma data" required readonly>
+                    </div>
+                    <div>
+                        <label for="horario">3. Escolha o Horário</label>
+                        <select id="horario" name="horario" required>
+                            <option value="" disabled selected>Selecione um horário</option>
+                            <option value="09:00">09:00</option>
+                            <option value="09:40">09:40</option>
+                            <option value="10:20">10:20</option>
+                            <option value="11:00">11:00</option>
+                            <option value="11:40">11:40</option>
+                            <option value="14:00">14:00</option>
+                            <option value="14:40">14:40</option>
+                            <option value="15:20">15:20</option>
+                            <option value="16:00">16:00</option>
+                            <option value="16:40">16:40</option>
+                            <option value="17:20">17:20</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="nome">4. Seu Nome Completo</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefone">5. Seu Celular (WhatsApp)</label>
+                    <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" required>
+                </div>
+                <button type="submit">Confirmar Agendamento</button>
+            </form>
+        </main>
+        <footer>
+            <p>&copy; 2025 Lion's Barbearia. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/pt.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

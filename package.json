@@ -1,0 +1,17 @@
+{
+    "name": "barbearia-vercel",
+    "version": "1.0.0",
+    "description": "Backend para o site da barbearia na Vercel",
+    "main": "api/index.js",
+    "scripts": {
+        "start": "node api/index.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^4.19.2",
+        "pg": "^8.12.0",
+        "serverless-http": "^3.2.0"
+    }
+}

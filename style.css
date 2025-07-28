@@ -1,0 +1,457 @@
+/* --- ESTILOS GERAIS (CSS) - VERSÃO FINAL --- */
+:root {
+    --cor-primaria: #c5a47e;
+    --cor-fundo: #1a1a1a;
+    --cor-container: #222222;
+    --cor-texto: #f4f4f4;
+    --cor-borda: #444;
+    --cor-perigo: #dc3545;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 25px 30px;
+    background-color: var(--cor-container);
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.hidden {
+    display: none;
+}
+
+/* BOAS-VINDAS */
+#welcome-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.welcome-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    border: 2px solid var(--cor-borda);
+}
+
+.welcome-text h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--cor-primaria);
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.welcome-text p {
+    font-size: 1.1em;
+    color: #ccc;
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+
+#btn-show-booking {
+    background-color: transparent;
+    border: 2px solid var(--cor-primaria);
+    color: var(--cor-primaria);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 2em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+#btn-show-booking:hover {
+    background-color: var(--cor-primaria);
+    color: var(--cor-fundo);
+    transform: scale(1.1);
+}
+
+/* AGENDAMENTO */
+#booking-screen header {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--cor-borda);
+    padding-bottom: 20px;
+}
+
+.barbearia-titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    font-family: 'Playfair Display', serif;
+    color: var(--cor-primaria);
+    font-size: 2.8em;
+    margin: 0;
+}
+
+.logo-barbearia-h1 {
+    width: 45px;
+    height: auto;
+}
+
+#booking-screen header p {
+    font-size: 1.1em;
+    color: #ccc;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 1.1em;
+    color: var(--cor-primaria);
+}
+
+input[type="text"],
+input[type="tel"],
+select {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--cor-fundo);
+    border: 1px solid var(--cor-borda);
+    border-radius: 5px;
+    color: var(--cor-texto);
+    font-size: 1em;
+}
+
+#data,
+#data-bloqueio {
+    cursor: pointer;
+}
+
+.servicos-container,
+.horarios-data {
+    display: grid;
+    gap: 15px;
+}
+
+.servicos-container {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+.horarios-data {
+    grid-template-columns: 1fr 1fr;
+}
+
+.servico-opcao {
+    background-color: var(--cor-fundo);
+    border: 2px solid var(--cor-borda);
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+}
+
+.servico-opcao:hover {
+    border-color: var(--cor-primaria);
+    transform: translateY(-3px);
+}
+
+.servico-opcao input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.servico-opcao label {
+    display: block;
+    padding: 15px 10px;
+    cursor: pointer;
+    color: var(--cor-texto);
+    font-weight: 500;
+    font-size: 1em;
+    width: 100%;
+    height: 100%;
+}
+
+.servico-opcao label span {
+    display: block;
+    font-size: 0.9em;
+    color: #bbb;
+    margin-top: 5px;
+}
+
+.servico-opcao input[type="radio"]:checked+label {
+    color: var(--cor-primaria);
+}
+
+.servico-opcao[has-checked="true"] {
+    border-color: var(--cor-primaria);
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--cor-primaria);
+    color: var(--cor-fundo);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #e0b98f;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    color: #777;
+    font-size: 0.9em;
+}
+
+/* PROMOÇÕES (CLIENTE) */
+#promocoes-destaque {
+    width: 100%;
+    max-width: 550px;
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px dashed var(--cor-primaria);
+    border-radius: 8px;
+}
+
+#promocoes-destaque h3 {
+    text-align: center;
+    color: var(--cor-primaria);
+    margin-bottom: 15px;
+}
+
+.item-promo-cliente {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.item-promo-cliente:last-child {
+    margin-bottom: 0;
+}
+
+.item-promo-cliente h4 {
+    color: var(--cor-texto);
+    font-weight: 500;
+}
+
+.item-promo-cliente p {
+    font-size: 0.95em;
+    color: #ccc;
+}
+
+/* PAINEL ADMIN */
+.gerenciar-dias {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.gerenciar-dias input[type="text"] {
+    width: auto;
+    flex-grow: 1;
+}
+
+.gerenciar-dias button {
+    width: auto;
+    padding: 12px 15px;
+    font-size: 0.9em;
+    text-transform: none;
+}
+
+#lista-dias-bloqueados {
+    list-style: none;
+    padding: 10px;
+    background-color: var(--cor-fundo);
+    border-radius: 5px;
+}
+
+#lista-dias-bloqueados li {
+    padding: 5px;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.promo-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.promo-form textarea {
+    min-height: 80px;
+    resize: vertical;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    padding: 12px;
+    background-color: var(--cor-fundo);
+    border: 1px solid var(--cor-borda);
+    border-radius: 5px;
+    color: var(--cor-texto);
+    font-size: 1em;
+}
+
+.promo-form button {
+    width: auto;
+    align-self: flex-start;
+    text-transform: none;
+    font-size: 1em;
+}
+
+.item-promo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--cor-fundo);
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border-left: 3px solid var(--cor-primaria);
+}
+
+.item-promo p {
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+.btn-delete-promo {
+    background: var(--cor-perigo);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    line-height: 30px;
+    text-align: center;
+    padding: 0;
+}
+
+#lista-agendamentos .agendamento {
+    background-color: var(--cor-fundo);
+    border: 1px solid var(--cor-borda);
+    border-left: 5px solid var(--cor-primaria);
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+#lista-agendamentos h4 {
+    color: var(--cor-primaria);
+    margin-bottom: 10px;
+}
+
+#lista-agendamentos p {
+    margin: 0;
+}
+
+#btn-limpar-agendamentos {
+    background-color: var(--cor-perigo);
+    color: var(--cor-texto);
+    margin-top: 10px;
+}
+
+/* CALENDÁRIO FLATPCIKR */
+.flatpickr-calendar {
+    background: var(--cor-container);
+    border: 1px solid var(--cor-borda);
+    color: var(--cor-texto);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.flatpickr-months .flatpickr-month {
+    color: var(--cor-texto);
+    fill: var(--cor-texto);
+}
+
+.flatpickr-months .flatpickr-prev-month,
+.flatpickr-months .flatpickr-next-month {
+    fill: var(--cor-texto);
+}
+
+.flatpickr-weekdays {
+    background: var(--cor-fundo);
+}
+
+span.flatpickr-weekday {
+    color: var(--cor-primaria);
+}
+
+.flatpickr-day {
+    color: var(--cor-texto);
+}
+
+.flatpickr-day:hover {
+    background: var(--cor-borda);
+}
+
+.flatpickr-day.selected {
+    background: var(--cor-primaria);
+    color: var(--cor-fundo);
+    border-color: var(--cor-primaria);
+}
+
+.flatpickr-day.flatpickr-disabled {
+    color: rgba(244, 244, 244, 0.3);
+    cursor: not-allowed;
+}
+
+.flatpickr-day.prevMonthDay,
+.flatpickr-day.nextMonthDay {
+    visibility: hidden;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 600px) {
+    .container {
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    .horarios-data,
+    .gerenciar-dias {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+    }
+
+    .welcome-text h2,
+    #booking-screen .barbearia-titulo,
+    #admin-content h2 {
+        font-size: 2.2em;
+    }
+
+    #promocoes-destaque {
+        width: 95%;
+        padding: 15px;
+    }
+}

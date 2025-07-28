@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Barbeiro - Lion's Barbearia</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="admin-content" class="container hidden">
+        <header>
+            <h1>Painel do Barbeiro</h1>
+            <p>Gerencie sua agenda, dias de folga e promoções.</p>
+        </header>
+
+        <main>
+            <section class="form-group">
+                <h2>Gerenciar Dias Bloqueados</h2>
+                <div class="gerenciar-dias">
+                    <input type="text" id="data-bloqueio" placeholder="Selecione uma data">
+                    <button id="btn-bloquear">Bloquear Dia</button>
+                    <button id="btn-desbloquear">Desbloquear Dia</button>
+                </div>
+                <h3>Dias Atualmente Bloqueados:</h3>
+                <ul id="lista-dias-bloqueados"></ul>
+            </section>
+
+            <section class="form-group">
+                <h2>Gerenciar Promoções</h2>
+                <div class="promo-form">
+                    <input type="text" id="promo-titulo" placeholder="Título da Promoção (Ex: Combo da Semana)">
+                    <textarea id="promo-descricao" rows="3"
+                        placeholder="Descrição da Promoção (Ex: Corte + Barba por R$ 50,00 às terças)"></textarea>
+                    <button id="btn-add-promo">Adicionar Promoção</button>
+                </div>
+                <h3>Promoções Ativas:</h3>
+                <div id="lista-promocoes"></div>
+            </section>
+
+            <section class="form-group">
+                <h2>Agendamentos Recebidos</h2>
+                <div id="lista-agendamentos"></div>
+                <button id="btn-limpar-agendamentos">Limpar Agendamentos Antigos</button>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>Acesso restrito ao proprietário.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/pt.js"></script>
+    <script src="admin.js"></script>
+</body>
+
+</html>
